@@ -10,9 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var drop: DropMenuButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        drop.initMenu(["Item menu - A", "Item menu - B", "Item menu - C"], actions: [({ () -> (Void) in
+            print("I'm doing the A action")
+            }), ({ () -> (Void) in
+            print("I'm doing the B action")
+            }), ({ () -> (Void) in
+            print("I'm doing the C action")
+            })])
     }
 
     override func didReceiveMemoryWarning() {
